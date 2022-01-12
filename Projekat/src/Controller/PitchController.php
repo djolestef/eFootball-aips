@@ -27,6 +27,7 @@ class PitchController extends AbstractController
     public function index(Request $request): Response
     {
         $id = $request->get('id');
+        dd($id);
 
         /**
          * @var Pitch $pitch
