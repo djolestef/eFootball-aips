@@ -2,9 +2,9 @@ security:
     encoders:
         FOS\UserBundle\Model\UserInterface: auto
 
-    role_hierarchy:
-        ROLE_COMPANY: ROLE_COMAPNY
-        ROLE_USER: ROLE_USER
+#    role_hierarchy:
+#        ROLE_COMPANY: ROLE_COMAPNY
+#        ROLE_USER: ROLE_USER
 
     providers:
         users_in_memory: { memory: null }

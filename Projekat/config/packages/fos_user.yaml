@@ -5,5 +5,9 @@ fos_user:
   from_email:
     address: "%env(mailer_email)%"
     sender_name: "%env(mailer_name)%"
+  registration:
+    confirmation:
+      enabled: true
+
   service:
     mailer: fos_user.mailer.twig_swift

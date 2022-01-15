@@ -29,3 +29,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+    fos_user.registration.controller:
+        class: App\Controller\RegistrationController
+
+    FOS\UserBundle\Form\Factory\FactoryInterface: '@fos_user.registration.form.factory'

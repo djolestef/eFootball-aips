@@ -27,11 +27,7 @@ class PitchController extends AbstractController
     public function index(Request $request): Response
     {
         $id = $request->get('id');
-        dd($id);
 
-        /**
-         * @var Pitch $pitch
-         */
         $pitch = $this->pitchService->getPitchById($id);
 
         return $this->render('pitch/index.html.twig', [
