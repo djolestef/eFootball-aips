@@ -8,6 +8,9 @@ fos_user:
   registration:
     confirmation:
       enabled: true
+    form:
+      type: App\Form\RegistrationType
+      name: fos_user_registration_form
 
   service:
     mailer: fos_user.mailer.twig_swift
