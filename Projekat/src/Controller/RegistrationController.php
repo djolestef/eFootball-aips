@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Form\RegistrationType;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
@@ -9,6 +10,7 @@ use FOS\UserBundle\Event\UserEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
 use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
+use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -92,18 +94,16 @@ class RegistrationController extends BaseController
         ]);
     }
 
-//    public function confirmedAction(Request $request)
-//    {
-//        $user = $this->getUser();
-//        dd($user);
-//        if (!is_object($user) || !$user instanceof UserInterface) {
-//            throw new AccessDeniedException('This user does not have access to this section.');
-//        }
-//        dd('ddd');
-//
-//        return $this->render('@FOSUser/Registration/confirmed.html.twig', [
-//            'user' => $user,
-//            'targetUrl' => $this->getTargetUrlFromSession($request->getSession()),
-//        ]);
-//    }
+    public function confirmedAction(Request $request): Response
+    {
+        $user = $this->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+
+        $url = $this->generateUrl('questionnaire');
+
+        return new RedirectResponse($url);
+
+    }
 }

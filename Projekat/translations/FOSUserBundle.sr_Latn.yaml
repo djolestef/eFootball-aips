@@ -1,2 +1,6 @@
 form:
   role: 'Registrujem se kao'
+
+registration:
+  confirmed: 'Čestitamo %username%, Vaš nalog je sada aktivan.'
+  info: 'Molimo Vas popunite dodatne podatke kroz upitnik.'
