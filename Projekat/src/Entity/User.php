@@ -14,9 +14,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class User extends BaseUser
 {
-    const ROLE_DEFAULT = 'DEFAULT';
     const ROLE_COMPANY = 'ROLE_COMPANY';
-    const ROLE_USER = 'ROLE_USER';
+    const ROLE_CLIENT = 'ROLE_CLIENT';
 
     /**
      * @ORM\Id

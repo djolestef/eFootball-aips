@@ -19,4 +19,13 @@ class PitchService
         return $this->pitchRepository->find($id);
     }
 
+    /**
+     * @throws \Doctrine\ORM\OptimisticLockException
+     * @throws \Doctrine\ORM\ORMException
+     */
+    public function createNewPitch(Pitch $pitch): ?int
+    {
+        return $this->pitchRepository->save($pitch);
+    }
+
 }

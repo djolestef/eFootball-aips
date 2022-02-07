@@ -48,7 +48,7 @@ class RegistrationType extends AbstractType
             ->add('roles', ChoiceType::class, [
                 'choices' => [
                     'Kompanija' => 'ROLE_COMPANY',
-                    'Korisnik' => 'ROLE_USER',
+                    'Korisnik' => 'ROLE_CLIENT',
                 ],
                 'label' => 'form.role',
                 'translation_domain' => 'FOSUserBundle',

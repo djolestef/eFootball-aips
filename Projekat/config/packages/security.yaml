@@ -27,3 +27,6 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/questionnaire, roles: [ROLE_COMPANY, ROLE_CLIENT] }
+        - { path: ^/pitch/add, roles: [ROLE_COMPANY] }
+        - { path: ^/pitch/$1, roles: [ROLE_COMPANY, ROLE_CLIENT] }

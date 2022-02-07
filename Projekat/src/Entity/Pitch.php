@@ -30,7 +30,7 @@ class Pitch
     private $price;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      * @ORM\JoinColumn(nullable=false)
      */
     private $dimensions;
@@ -77,12 +77,12 @@ class Pitch
     }
 
 
-    public function getDimensions(): ?int
+    public function getDimensions(): ?string
     {
         return $this->dimensions;
     }
 
-    public function setDimensions(int $dimensions): self
+    public function setDimensions(string $dimensions): self
     {
         $this->dimensions = $dimensions;
 

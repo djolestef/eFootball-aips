@@ -25,4 +25,9 @@ class ClientService
     {
         $this->clientRepository->save($client);
     }
+
+    public function getClientById($id): ?Client
+    {
+        return $this->clientRepository->find($id);
+    }
 }

@@ -19,6 +19,27 @@ class PitchRepository extends ServiceEntityRepository
         parent::__construct($registry, Pitch::class);
     }
 
+    /**
+     * @param Pitch $pitch
+     * @throws \Doctrine\ORM\ORMException
+     */
+    public function persist(Pitch $pitch): void
+    {
+        $this->_em->persist($pitch);
+    }
+
+    /**
+     * @param Pitch $pitch
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function save(Pitch $pitch): ?int
+    {
+        $this->persist($pitch);
+        $this->_em->flush();
+        return $pitch->getId();
+    }
+
     // /**
     //  * @return Pitch[] Returns an array of Pitch objects
     //  */
