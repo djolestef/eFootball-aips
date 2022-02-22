@@ -28,5 +28,3 @@
 .idea
 
 symfony.lock
-#../.idea/
-../.idea/
